@@ -1,0 +1,78 @@
+.title {
+    text-align: center;
+    color: black;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .receipt-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 50px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .receipt-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .receipt-header-title {
+    font-size: 24px;
+    color: black;
+  }
+
+  .receipt-header-date {
+    font-size: 16px;
+    color: #757575;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  .receipt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  .table-column {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 18px;
+    color: #212121;
+    font-weight: 500;
+  }
+
+  .discount-label, .total-label {
+    text-align: right;
+    font-size: 18px;
+    color: #212121;
+  }
+
+  .total-label {
+    font-weight: bold;
+    color: #2196f3;
+  }
+
+  .total-value {
+    color: #2196f3;
+    font-weight: bold;
+  }
+
+  .receipt-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  button {
+    margin-left: 20px;
+  }
+
+  .print-button {
+    background-color: #2196f3;
+    color: #fff;
+  }

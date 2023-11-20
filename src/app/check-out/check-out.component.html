@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height: 10vh;">
+  <div class="container">
+      <a class="navbar-brand logoIcon" href="#">
+          <img src="assets/supmark logo.png" width="70" height="50" class="d-inline-block align-top" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li>
+                <form>
+                    <button class="btn btn-danger logout" type="button" (click)="logout()"><svg xmlns="http://www.w3.org/2000/svg" height="1.25em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#FFFFFF}</style><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"/></svg></button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+</nav>
+<br>
+<br>
+<br>
+
+<form [formGroup]="checkoutForm" class="checkout-form">
+
+  <div class="address-details">
+    <h4>Address Details</h4>
+    <div class="form-fields">
+      <mat-form-field class="field">
+        <input matInput placeholder="Apartment No" formControlName="apartmentNo">
+      </mat-form-field>
+
+      <mat-form-field class="field">
+        <input matInput placeholder="Area" formControlName="area">
+      </mat-form-field>
+
+      <mat-form-field class="field">
+        <input matInput placeholder="Pincode" formControlName="pincode">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="customer-details">
+    <h4>Customer Details</h4>
+    <div class="form-fields">
+      <mat-form-field class="field">
+        <input matInput placeholder="First Name" formControlName="firstName">
+      </mat-form-field>
+
+      <mat-form-field class="field">
+        <input matInput placeholder="Last Name" formControlName="lastName">
+      </mat-form-field>
+
+      <mat-form-field class="field">
+        <input matInput placeholder="Phone No" formControlName="phoneNo">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <br>
+  <div class="radio-buttons form-field">
+    <span class="label">Type of Address:</span>
+    <mat-radio-group formControlName="addressType">
+      <mat-radio-button value="home">Home</mat-radio-button>
+      <mat-radio-button value="office">Office</mat-radio-button>
+      <mat-radio-button value="others">Others</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <br>
+
+  <div class="form-field discount-selection">
+    <span class="label">Discount/Promotion:</span>
+    <mat-radio-group formControlName="discount">
+      <mat-radio-button value="NONE">None</mat-radio-button>
+      <mat-radio-button value="10OFF" [disabled]="totalPrice < 100">10% Off</mat-radio-button>
+      <mat-radio-button value="20OFF" [disabled]="totalPrice < 300">20% Off</mat-radio-button>
+      <mat-radio-button value="GIFTCARD" [disabled]="totalPrice < 500">$50 Gift Card</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  
+  <div class="form-buttons">
+    <button mat-raised-button (click)="generateReceipt()">Generate Receipt</button>
+    <button mat-raised-button color="primary" type="submit"(click)="onSubmit()">Proceed to Pay</button>
+  </div>
+
+  <div *ngIf="discount !== 0" class="price-details">
+    <div class="label">Discount Applied:</div>
+    <div class="amount">-{{ discount | currency:'INR' }}</div>
+  </div>
+
+  <div class="price-details">
+    <div class="label">Total Price:</div>
+    <div class="amount">{{ totalPrice | currency:'INR' }}</div>
+  </div>
+
+</form>

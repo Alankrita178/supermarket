@@ -1,0 +1,41 @@
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .address-details,
+  .customer-details {
+    margin-bottom: 20px;
+  }
+  
+  .address-details h4,
+  .customer-details h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .field {
+    flex: 1 1 33.33%;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .form-buttons button:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .logout{
+    margin-left: 60rem;
+  }
+  .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; }
+  

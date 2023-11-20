@@ -1,0 +1,9 @@
+.btn-primary {
+    background-color: black;
+    border-color: black;
+  }
+
+  .carticon{
+    margin-left: 60rem;
+  }
+  .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; }

@@ -1,0 +1,58 @@
+
+<section class="h-150 gradient-form" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <div class="text-center">
+                  <img src="assets\supmark logo.png"
+                    style="width: 85px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1">We are The SupMark Team</h4>
+                </div>
+
+                <form [formGroup]="loginForm">
+                  <p>Please login to your account</p>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example11">Email</label>
+                    <input type="email" id="form2Example11" class="form-control"
+                      placeholder="email address" formControlName="email"/>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example22">Password</label>
+                    <input type="password" id="form2Example22" class="form-control" formControlName="password"/>
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-block fa-lg gradient-custom-2 mb-3" type="submit" style="color: white;" (click)="login()">Log
+                      in</button>
+                      <br>
+                    <a class="text-muted" href="#!">Forgot password?</a>
+                  </div>
+
+                <!-- <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>  -->
+
+                </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">We are more than just a company</h4>
+                <p class="small mb-0">Supmark is a modern, large-scale supermarket store that offers a wide range of products and services to make shopping convenient and hassle-free. At Supmark, customers can find a variety of items, including fresh produce, meat, dairy, bakery, and frozen foods. The store also has a vast selection of non-food items such as cleaning supplies, toiletries, and personal care products.
+
+                  Supmark offers a pleasant customer experience by providing easy-to-navigate store aisles, modern display shelves, and plenty of signs to guide shopping. The store is staffed with knowledgeable associates who are always willing to help customers find what they need.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,41 @@
+<h2 class="title">{{ supermartName }}</h2>
+
+<div class="receipt-container">
+  <div class="receipt-header">
+    <h3 class="receipt-header-title">Receipt Details</h3>
+    <p class="receipt-header-date">{{ data.date | date: "mediumDate" }}</p>
+  </div>
+  <table class="receipt-table">
+    <thead>
+      <tr>
+        <th class="table-column">Item Name</th>
+        <th class="table-column">Price (INR)</th>
+        <th class="table-column">Quantity</th>
+        <th class="table-column">Total (INR)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data.cartItems">
+        <td>{{ item.name }}</td>
+        <td>{{ item.price | currency:'INR':true }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ (item.price * item.quantity) | currency:'INR':true }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3" class="table-column discount-label">Discount Applied:</td>
+        <td class="table-column">- {{ data.discount | currency:'INR':true }}</td>
+      </tr>
+      <tr>
+        <td colspan="3" class="table-column total-label">Total Price:</td>
+        <td class="table-column total-value">{{ data.totalPrice | currency:'INR':true }}</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<div class="receipt-actions">
+  <button mat-raised-button color="primary" [mat-dialog-close]="true">Close</button>
+  <button mat-raised-button color="primary" class="print-button" (click)="print()">Print Receipt</button>
+</div>

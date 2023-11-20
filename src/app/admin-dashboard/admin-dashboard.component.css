@@ -1,0 +1,30 @@
+.btn-group {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-group .btn:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  .table thead th {
+    text-align: center;
+  }
+
+  .btn-edit{
+    background-color: black;
+    border-color: black;
+  }
+  .heading{
+    font-family: "Times New Roman", Times, serif;;
+  }
+
+  .addbtn{
+    background-color: black;
+    border-color: black;
+  }
+  .logout{
+    margin-left: 60rem;
+  }
+  .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 9999; }
+  
